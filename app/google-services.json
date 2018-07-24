@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "420984028917",
+    "firebase_url": "https://supermangame-bceb3.firebaseio.com",
+    "project_id": "supermangame-bceb3",
+    "storage_bucket": "supermangame-bceb3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:420984028917:android:cb2530bcd6685e7b",
+        "android_client_info": {
+          "package_name": "com.example.yoshizawarei.supermangame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "420984028917-9n1t3ri2io4t9g2l9h2kppnbrov648f4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.yoshizawarei.supermangame",
+            "certificate_hash": "a08f95833a6534e2cedfd02d2308d41f87fd1c02"
+          }
+        },
+        {
+          "client_id": "420984028917-tr8gpme2d3kieh02rdfskf2g5b3vojgq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJ3myZIPVABhulpADnmJoVH5YhWJpaHM0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "420984028917-tr8gpme2d3kieh02rdfskf2g5b3vojgq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
