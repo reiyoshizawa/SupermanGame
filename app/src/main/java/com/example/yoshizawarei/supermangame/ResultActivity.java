@@ -6,10 +6,20 @@ import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-public class result extends AppCompatActivity {
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class ResultActivity extends AppCompatActivity {
 
     private BgmPlayer bgm;
 
@@ -39,6 +49,15 @@ public class result extends AppCompatActivity {
             highScoreLabel.setText("High Score: " + highScore);
         }
 
+        Intent intent = getIntent();
+        String email = intent.getStringExtra("email");
+        intent.putExtra("email",email);
+
+        // Write a message to the database
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Score");
+        // We can also chain the two calls together
+        myRef.push().setValue(new UserScore(email, score));
     }
 
     public void tryAgainLevel1(View view) {
@@ -59,4 +78,9 @@ public class result extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void toHistory(View view) {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        intent.putExtra("LEVEL", "3");
+        startActivity(intent);
+    }
 }

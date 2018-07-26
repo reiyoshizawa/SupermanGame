@@ -13,7 +13,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -94,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
         spiderman2.setY(-80);
 
         scoreLabel.setText("Score : 0");
-
     }
 
     @Override
@@ -240,9 +238,18 @@ public class MainActivity extends AppCompatActivity {
             timer = null;
 
             // Show Result
-            Intent intent = new Intent(getApplicationContext(), result.class);
-            intent.putExtra("SCORE", score);
-            startActivity(intent);
+//            Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+//            String email = intent.getStringExtra("email");
+//            intent.putExtra("email",email);
+//            intent.putExtra("SCORE", score);
+//            startActivity(intent);
+
+            Intent intent = getIntent();
+            String email = intent.getStringExtra("email");
+            Intent intent2 = new Intent(getApplicationContext(), ResultActivity.class);
+            intent2.putExtra("email",email);
+            intent2.putExtra("SCORE", score);
+            startActivity(intent2);
         }
     }
 

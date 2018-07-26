@@ -15,6 +15,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
     private FirebaseAuth mAuth;
@@ -38,11 +40,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onStart();
         login_bottun.setOnClickListener(this);
     }
+    // root ---- User1 -- id
+    //                 -- score
+    //                 -- ...
 
+    //      ---- User2 -- id
+    //                 -- score
 
     @Override
     public void onClick(View v) {
-        String email = email_et.getText().toString();
+        final String email = email_et.getText().toString();
         String password = pw_et.getText().toString();
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -52,7 +59,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Intent intent = new Intent(LoginActivity.this, start.class);
+                            Intent intent = new Intent(LoginActivity.this, StartActivity.class);
+                            intent.putExtra("email",email);
                             startActivity(intent);
                             finish();
                         } else {

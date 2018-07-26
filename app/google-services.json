@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "420984028917",
-    "firebase_url": "https://supermangame-bceb3.firebaseio.com",
-    "project_id": "supermangame-bceb3",
-    "storage_bucket": "supermangame-bceb3.appspot.com"
+    "project_number": "246739526033",
+    "firebase_url": "https://supermangame-c30c9.firebaseio.com",
+    "project_id": "supermangame-c30c9",
+    "storage_bucket": "supermangame-c30c9.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:420984028917:android:cb2530bcd6685e7b",
+        "mobilesdk_app_id": "1:246739526033:android:cb2530bcd6685e7b",
         "android_client_info": {
           "package_name": "com.example.yoshizawarei.supermangame"
         }
       },
       "oauth_client": [
         {
-          "client_id": "420984028917-9n1t3ri2io4t9g2l9h2kppnbrov648f4.apps.googleusercontent.com",
+          "client_id": "246739526033-oqrjkp2ju1vl8e26r2jkf970gtahfc7c.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.yoshizawarei.supermangame",
@@ -23,13 +23,13 @@
           }
         },
         {
-          "client_id": "420984028917-tr8gpme2d3kieh02rdfskf2g5b3vojgq.apps.googleusercontent.com",
+          "client_id": "246739526033-p59j74pmvpn3j1qsatbamtkllijgjgfm.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBJ3myZIPVABhulpADnmJoVH5YhWJpaHM0"
+          "current_key": "AIzaSyAUtCpfJXWYjZboa9yQZG5vfqSgqi_r-OI"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "420984028917-tr8gpme2d3kieh02rdfskf2g5b3vojgq.apps.googleusercontent.com",
+              "client_id": "246739526033-p59j74pmvpn3j1qsatbamtkllijgjgfm.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

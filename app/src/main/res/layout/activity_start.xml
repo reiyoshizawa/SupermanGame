@@ -4,18 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".start"
+    tools:context=".StartActivity"
     android:orientation="vertical"
-    android:gravity="center"
-    android:background="@drawable/bg_start">
+    android:gravity="center">
+    <!--android:background="@drawable/bg_start">-->
 
-    <TextView
+    <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="50sp"
-        android:layout_marginTop="50dp"/>
+        android:orientation="horizontal"
+        android:columnCount="2">
+        <TextView android:text="aaa"
+            android:layout_column="1"/>
+        <TextView android:text="bbb"
+            android:layout_column="1"/>
+    </GridLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
     <Button
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -37,5 +45,6 @@
         android:paddingBottom="20dp"
         android:text="Level 3"
         android:onClick="level3Start"/>
+    </LinearLayout>
 
 </LinearLayout>
