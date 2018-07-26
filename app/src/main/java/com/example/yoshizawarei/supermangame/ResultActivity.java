@@ -79,8 +79,7 @@ public class ResultActivity extends AppCompatActivity {
     }
 
     public void toHistory(View view) {
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        intent.putExtra("LEVEL", "3");
+        Intent intent = new Intent(getApplicationContext(), HistoryActivity.class);
         startActivity(intent);
     }
 }
