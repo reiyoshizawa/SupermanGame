@@ -5,9 +5,19 @@ public class UserScore {
     private String email;
     private int score;
 
+    public UserScore() {}
+
     public UserScore(String email, int score) {
         this.email = email;
         this.score = score;
+    }
+
+    @Override
+    public String toString() {
+        return "UserScore{" +
+                "email='" + email + '\'' +
+                ", score=" + score +
+                '}';
     }
 
     public String getEmail() {

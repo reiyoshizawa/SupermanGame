@@ -7,6 +7,12 @@
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
+    <ListView
+        android:id="@+id/mListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ListView>
+
     <EditText
         android:id="@+id/email_et"
         android:layout_width="wrap_content"
