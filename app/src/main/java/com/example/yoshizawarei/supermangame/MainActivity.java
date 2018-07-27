@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.Timer;
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageView pink;
     private ImageView spiderman;
     private ImageView spiderman2;
+    private LinearLayout linearLayout;
+    private int character;
 
     // Size
     private int frameHeight;
@@ -65,9 +68,32 @@ public class MainActivity extends AppCompatActivity {
         bgm = new BgmPlayer(this);
         bgm.start();
 
+        linearLayout = findViewById(R.id.main_layout);
+
         scoreLabel = (TextView) findViewById(R.id.scoreLabel);
         startLabel = (TextView) findViewById(R.id.startLabel);
         box = (ImageView) findViewById(R.id.box);
+
+        character = getIntent().getIntExtra("character", 0);
+        switch (character) {
+            case 0:
+                box.setImageResource(R.drawable.superman);
+                linearLayout.setBackgroundResource(R.drawable.bg);
+                break;
+            case 1:
+                box.setImageResource(R.drawable.captain_america);
+                linearLayout.setBackgroundResource(R.drawable.bg_captain_america);
+                break;
+            case 2:
+                box.setImageResource(R.drawable.wolverine);
+                linearLayout.setBackgroundResource(R.drawable.bg_wolverine);
+                break;
+            case 3:
+                box.setImageResource(R.drawable.batman);
+                linearLayout.setBackgroundResource(R.drawable.bg_batman);
+                break;
+        }
+
         orange = (ImageView) findViewById(R.id.orange);
         pink = (ImageView) findViewById(R.id.pink);
         spiderman = (ImageView) findViewById(R.id.spiderman);
@@ -125,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String level = intent.getStringExtra("LEVEL");
         if (level.equals("1")) {
+
             spidermanX -= 16;
             // spiderman2
             spiderman2X = -300;
@@ -137,6 +164,27 @@ public class MainActivity extends AppCompatActivity {
             spiderman2.setX(spiderman2X);
             spiderman2.setY(spiderman2Y);
         } else if (level.equals("2")) {
+
+            character = getIntent().getIntExtra("character", 0);
+            switch (character) {
+                case 0:
+                    box.setImageResource(R.drawable.superman);
+                    linearLayout.setBackgroundResource(R.drawable.bg);
+                    break;
+                case 1:
+                    box.setImageResource(R.drawable.captain_america);
+                    linearLayout.setBackgroundResource(R.drawable.bg_captain_america);
+                    break;
+                case 2:
+                    box.setImageResource(R.drawable.wolverine);
+                    linearLayout.setBackgroundResource(R.drawable.bg_wolverine);
+                    break;
+                case 3:
+                    box.setImageResource(R.drawable.batman);
+                    linearLayout.setBackgroundResource(R.drawable.bg_batman);
+                    break;
+            }
+
             spidermanX -= 30;
             // spiderman2
             spiderman2X -= 12;
@@ -148,6 +196,9 @@ public class MainActivity extends AppCompatActivity {
             spiderman2.setX(spiderman2X);
             spiderman2.setY(spiderman2Y);
         } else {
+
+            box = (ImageView) findViewById(R.id.box);
+
             spidermanX -= 60;
             // spiderman2
             spiderman2X -= 40;
@@ -249,6 +300,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent2 = new Intent(getApplicationContext(), ResultActivity.class);
             intent2.putExtra("email",email);
             intent2.putExtra("SCORE", score);
+            intent2.putExtra("character", character);
             startActivity(intent2);
         }
     }

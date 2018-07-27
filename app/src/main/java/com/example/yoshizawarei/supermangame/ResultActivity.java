@@ -63,18 +63,24 @@ public class ResultActivity extends AppCompatActivity {
     public void tryAgainLevel1(View view) {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         intent.putExtra("LEVEL", "1");
+        int character = getIntent().getIntExtra("character", 0);
+        intent.putExtra("character", character);
         startActivity(intent);
     }
 
     public void tryAgainLevel2(View view) {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         intent.putExtra("LEVEL", "2");
+        int character = getIntent().getIntExtra("character", 0);
+        intent.putExtra("character", character);
         startActivity(intent);
     }
 
     public void tryAgainLevel3(View view) {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         intent.putExtra("LEVEL", "3");
+        int character = getIntent().getIntExtra("character", 0);
+        intent.putExtra("character", character);
         startActivity(intent);
     }
 

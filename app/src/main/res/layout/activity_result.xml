@@ -10,11 +10,11 @@
     tools:context=".ResultActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="match_parent"
-        android:layout_marginTop="250dp"
-        android:layout_marginLeft="10dp"
-        android:orientation="vertical">
+        android:layout_marginTop="270dp"
+        android:orientation="vertical"
+        android:gravity="center">
 
         <TextView
             android:id="@+id/scoreLabel"
@@ -36,28 +36,39 @@
             android:layout_height="wrap_content"
             android:onClick="tryAgainLevel1"
             android:text="Level 1"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:background="#ccc"
+            android:layout_marginBottom="10dp"
+            />
 
         <Button
             android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:onClick="tryAgainLevel2"
             android:text="Level 2"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:background="#ccc"
+            android:layout_marginBottom="10dp"
+            />
 
         <Button
             android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:onClick="tryAgainLevel3"
             android:text="Level 3"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:background="#ccc"
+            android:layout_marginBottom="10dp"
+            />
 
         <Button
             android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:onClick="toHistory"
             android:text="history"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:background="@color/colorPrimary"
+            android:textColor="#ffffff"/>
 
     </LinearLayout>
 </LinearLayout>
