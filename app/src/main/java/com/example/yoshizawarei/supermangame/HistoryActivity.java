@@ -34,7 +34,7 @@ public class HistoryActivity extends AppCompatActivity {
         DatabaseReference myRef = database.getReference("Score");
 
         // Read from the database
-        myRef.addValueEventListener(new ValueEventListener() {
+        myRef.orderByChild("score").limitToLast(20).addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot snapshot) {
