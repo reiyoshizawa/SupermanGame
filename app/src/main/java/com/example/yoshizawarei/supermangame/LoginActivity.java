@@ -5,7 +5,9 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,15 +34,15 @@ public class LoginActivity extends AppCompatActivity{
     private EditText pw_et;
     private Button logIn_button;
     private Button signUp_button;
-    private ListView mListView;
+//    private ListView mListView;
+//
+//
+//    private ArrayList<UserScore> arrayList;
+//
+//    public ArrayList<UserScore> getArrayList() {
+//        return arrayList;
+//    }
 
-
-
-    private ArrayList<UserScore> arrayList;
-
-    public ArrayList<UserScore> getArrayList() {
-        return arrayList;
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,41 +53,43 @@ public class LoginActivity extends AppCompatActivity{
         logIn_button = findViewById(R.id.logIn_button);
         signUp_button = findViewById(R.id.signUp_button);
 
-        arrayList = new ArrayList<>();
-        mListView = findViewById(R.id.mListView);
-
-
-        // Write a message to the database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Score");
-
-        // Read from the database
-        myRef.addValueEventListener(new ValueEventListener() {
-
-            @Override
-            public void onDataChange(DataSnapshot snapshot) {
-                showData(snapshot);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-//                Log.w(TAG, "Failed to read value.", error.toException());
-            }
-        });
-
-
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arrayList);
-        mListView.setAdapter(adapter);
+//        arrayList = new ArrayList<>();
+//        mListView = findViewById(R.id.mListView);
+//
+//
+//        // Write a message to the database
+//        FirebaseDatabase database = FirebaseDatabase.getInstance();
+//        DatabaseReference myRef = database.getReference("Score");
+//
+//        // Read from the database
+//        myRef.addValueEventListener(new ValueEventListener() {
+//
+//            @Override
+//            public void onDataChange(DataSnapshot snapshot) {
+//                showData(snapshot);
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError error) {
+//                // Failed to read value
+////                Log.w(TAG, "Failed to read value.", error.toException());
+//            }
+//        });
+//
+//        // Add a header to the ListView
+////        LayoutInflater inflater = getLayoutInflater();
+////        ViewGroup history_header = (ViewGroup)inflater.inflate(R.layout.history_header,mListView,false);
+////        mListView.addHeaderView(history_header);
+//        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arrayList);
+//        mListView.setAdapter(adapter);
     }
 
-    private void showData(DataSnapshot snapshot) {
-        for(DataSnapshot ds : snapshot.getChildren()) {
-            UserScore userScore = ds.getValue(UserScore.class);
-            arrayList.add(userScore);
-
-        }
-    }
+//    private void showData(DataSnapshot snapshot) {
+//        for(DataSnapshot ds : snapshot.getChildren()) {
+//            UserScore userScore = ds.getValue(UserScore.class);
+//            arrayList.add(userScore);
+//        }
+//    }
 
     @Override
     protected void onStart() {

@@ -14,10 +14,7 @@ public class UserScore {
 
     @Override
     public String toString() {
-        return "UserScore{" +
-                "email='" + email + '\'' +
-                ", score=" + score +
-                '}';
+        return email +  ", score : " + score;
     }
 
     public String getEmail() {
